@@ -1,0 +1,601 @@
+a {
+    color: blue;
+    z-index: 200;
+}
+
+body {
+    margin: 0;
+}
+
+.Parents {
+    text-align: center;
+    font-size: large;
+    width:65%;
+}
+
+.four_it_shops {
+    width: 700px;
+    text-align: center;
+    font-size: large;
+}
+
+.whatwillilearn_it {
+    width: 700px;
+    text-align: center;
+    font-size: large;
+}
+
+.list_of_options {
+    font-size: large;
+}
+
+.list_of_options.p{
+    text-align: left;
+}
+
+.Career_welcome {
+text-decoration: underline;
+font-size: x-large;
+}
+
+#Career_welcome_opening {
+    font-size: large;
+}
+
+#moreit_info {
+    font-size: large;
+}
+
+#four_it_shops {
+    font-size: medium;
+    
+}
+
+#InfoIAccess {
+    text-align: center;
+}
+
+#WhereDoIaccess {
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .text-container  {
+        width: 100%
+    }
+}
+
+/*template styles*/
+.text-container{
+    font-family: helvetica;
+}
+.text-container video {
+    width: 80%
+}
+
+@media (max-width: 650px) {
+    .Parents {
+        text-align: center;
+        font-size: large;
+        width:95%;
+    }
+    
+    .four_it_shops {
+        width: 700px;
+        text-align: center;
+        font-size: large;
+    }
+    
+    .whatwillilearn_it {
+        width: 700px;
+        text-align: center;
+        font-size: large;
+    }
+    
+    .list_of_options {
+        font-size: large;
+    }
+    
+    .list_of_options.p{
+        text-align: left;
+    }
+    
+    .Career_welcome {
+    text-decoration: underline;
+    font-size: x-large;
+    }
+}
+
+/* header Styles */
+
+.header-container {
+    background-color: #333333;
+    font-family: "Autumn Thin";
+    padding-bottom: 150px;
+    padding-top:1px;
+    padding-left: 10px;
+}
+
+.header-h1 {
+    float: left;
+    margin-top: 40px;
+    margin-left: 15px;
+    padding-top: 20px;
+    color:white;
+    font-family: "Autumn Thin";
+}
+
+.header-img {
+    float: left;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.header-links {
+    text-align: right;
+    float: right;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+a:link {
+    background-color: transparent; 
+    text-decoration: none;
+    z-index: 200;
+}
+
+a:hover {
+
+    background-color: #00953b;
+
+    text-decoration: underline;
+}
+
+a:visited {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.header-pages {
+    background-color: #095540;
+    font-family: "Autumn Thin";
+    font-size: larger;
+    display: flex;
+    text-align: center;
+    line-height: 50px; 
+} 
+
+.header-pages a {
+    border-left: 1px solid;
+    color: #fff; 
+    flex-direction: row;
+    flex: 1 1 0;
+}
+
+/* Footer Styles */
+footer {
+    display: flex;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+    flex-direction: row;
+    flex: 1; /* This will make the text-container take up all the available space */
+    font-family: helvetica;
+}
+
+/* that one single hyperlink in the footer */
+footer a {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.flex-container {
+    box-sizing: border-box;
+    flex-direction: row;
+
+    width: 300px;
+    margin:auto;
+    clear: both;
+    display: table;
+    text-align:center;
+}
+
+/* Footer Mobile Optimization */
+@media (max-width: 650px) {
+    footer {
+      flex-direction: column;
+    }
+  }
+
+/* Header Mobile Optimization */
+  @media (max-width: 650px) {
+    .header-h1 {
+        padding-top: 10px;
+        margin-top: 0px;
+        margin-left: 7px;
+        margin-bottom: -10px;
+        
+        text-align: center;
+    }
+    .header-img {
+        padding-top: 5px;
+        padding-right: 5px;
+        width: 25vw;
+    }
+    .header-container {
+        padding-bottom: 15px;
+        padding-top: 15px;
+        padding-left: 5px;
+    }
+
+    .header-title {
+        display: flex;
+        flex-direction: column;
+    }
+    .header-title a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header-pages {
+        flex-direction: column;
+    }
+
+    .header-page {
+        border-bottom: 10px solid #fff;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    .header-links {
+        font-size: 75%;
+    }
+
+  }
+
+/* main page please fix this parker = bad at pro gamming*/ 
+
+/*District Map CSS*/
+
+/* Shop CSV template */
+.text-container{
+    font-family: helvetica;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-container video {
+    width: 100%
+}
+
+@media (max-width: 650px) {
+    .text-container {
+        width: 100%;
+    }
+}
+
+/* main page */
+
+/* background video */
+.video-background { 
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;  /* edit this percentage value to change the width of the video on the page */
+    height: 80%; /* edit this percentage value to change the height of the video on the page */
+
+    background-color: #bebebe;
+    font-size: 20;
+    color: gray;
+    
+    border: 2px solid #a8a8a8;
+    border-left: none;
+    border-right: none;
+    
+    z-index:-1;
+}
+
+video {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index:-1;
+}
+
+/* home page div layers */
+.whyUs {
+    position: absolute;
+
+    border: 3px solid;
+    border-color: #00953B;
+    background-color: #00953B;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    font-size: 100%;
+    padding: 6px;
+    margin: 5px;
+    top: 30%;
+    left: 34.5%;
+    width: 30%;
+    max-width: 50%;
+    height: 20%;
+    overflow: auto;
+
+    z-index: 10;
+}
+
+.announcements {
+    position: absolute;
+
+    border: 3px solid;
+    border-color: #00953B;
+    background-color: #00953B;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    font-size: 100%;
+    padding: 6px;
+    margin: 5px;
+    top: 45%;
+    right: 7%;
+    width: 17%;
+    max-width: 50%;
+    height: 17%;
+    overflow: auto;
+
+    z-index: 10;
+}
+
+.quickLinks {
+    position: absolute;
+
+    border: 3px solid;
+    border-color: #00953B;
+    background-color: #00953B;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    font-size: 100%;
+    padding: 6px;
+    margin: 5px;
+    top: 45%;
+    left: 7%;
+    width: 17%;
+    max-width: 50%;
+    height: 17%;
+    overflow: auto;
+
+    z-index: 10;
+}
+
+.mainInfo {
+    position: absolute;
+
+    border: 3px solid;
+    border-color: #00953B;
+    background-color: #00953B;
+    color: white;
+    text-shadow: black 0px 0px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    font-size: 100%;
+    padding: 6px;
+    margin: 5px;
+    top: 55%;
+    left: 34.5%;
+    width: 30%;
+    max-width: 50%;
+    height: 21%;
+    overflow: auto;
+
+    z-index: 10;
+}   
+
+/* home page mobile */
+@media (max-width: 650px) {
+
+    .home-container {
+        position: relative;
+        display: auto;
+        justify-content: center;
+        align-items: center;
+    
+        z-index: 1;
+    }
+
+    .video-background {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* edit this percentage value to change the width of the video on the page */
+        height: 80%; /* edit this percentage value to change the height of the video on the page */
+        background-color: #9c9c9c;
+        z-index:-1;
+    }
+
+    video {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index:-1;
+    }
+    
+    .whyUs {
+        justify-content: center;
+        font-size: 80%;
+        padding: 6px;
+        margin: 5px;
+        top: 5%;
+        left: 21%;
+        width: 80%;
+        max-width: 50%;
+        height: 20%;
+        overflow: auto;
+    }
+
+    .announcements {
+        width: 20%;
+        overflow: auto;
+        font-size: 80%;
+        top: 30%;
+        right: 8%;
+        width: 30%;
+        max-width: 50%;
+        height: 20%;
+
+    }
+
+    .announcements.u {
+        font-size: 50%;
+    }
+
+    .quickLinks {
+        width: 20%;
+        overflow: auto;
+        font-size: 80%;
+        top: 30%;
+        left: 7%;
+        width: 30%;
+        max-width: 50%;
+        height: 20%;
+    }
+
+    .mainInfo {
+        justify-content: center;
+        font-size: 80%;
+        padding: 6px;
+        margin: 5px;
+        bottom: 0;
+        left: 21%;
+        width: 80%;
+        max-width: 50%;
+        height: 30%;
+        overflow: auto;
+    }
+}
+
+/* Athletics Page */
+
+.sports-container {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 1;
+    margin: 1%;
+}
+
+.athletics-summary {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    /* font-family: ; */
+    font-size: 110%;
+    top: 15%;
+    width: 24%;
+    height: auto;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    overflow: auto;
+}
+
+.divider {
+    position: relative;
+    align-self: center;
+    border-top: 2px solid rgb(167, 167, 167);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin: auto;
+    height: auto;
+    max-width: 30%;
+    width: 25%;
+    top: 15%;
+    padding: 2%;
+    margin-bottom: -2%;
+}
+
+.mini-divider {
+    position: relative;
+    align-self: center;
+    border-top: 2px solid rgb(167, 167, 167);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin: auto;
+    height: auto;
+    max-width: 20%;
+    width: 15%;
+    padding: 2%;
+    margin-bottom: -4%;
+    margin-top: 1%;
+}
+
+.sports-sections {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 2%;
+    height: auto;
+    margin: auto;
+    font-size: 115%;
+}
+
+/* Athletics page mobile */
+
+@media (max-width: 650px) {
+    .sports-container {
+        overflow: auto;
+    }
+
+    .athletics-summary {
+        overflow: auto;
+        font-size: 85%;
+        width: 40%;
+        height: auto;
+        margin: auto;
+
+        margin-bottom: 3%;
+    }
+
+    .divider {
+        margin:auto;
+        height: auto;
+        max-width: 60%;
+        width: 50%;
+    }
+
+    .mini-divider {
+        margin:auto;
+        height: auto;
+        max-width: 60%;
+        width: 30%;
+    }
+
+    .sports-sections {
+        margin: auto;
+        height: auto;
+    }
+}

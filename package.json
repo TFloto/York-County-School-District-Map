@@ -1,0 +1,36 @@
+{
+  "name": "newsiteproposal",
+  "version": "1.0.0",
+  "description": "A new site to replace the current Ytech website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tsiegmund/newsiteproposal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tsiegmund/newsiteproposal/issues"
+  },
+  "homepage": "https://github.com/Tsiegmund/newsiteproposal#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "browserify": "^17.0.0",
+    "convert-excel-to-json": "^1.7.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-generator": "^4.16.1",
+    "leaflet": "^1.9.3",
+    "leaflet.markercluster": "^1.5.3",
+    "osmtogeojson": "^3.0.0-beta.5",
+    "overpass": "^0.2.2",
+    "path": "^0.12.7",
+    "xlsx": "^0.12.13"
+  },
+  "devDependencies": {
+    "excel": "^1.0.1"
+  }
+}

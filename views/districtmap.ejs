@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_header') -%>
+<link rel="stylesheet" href="styles.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Participating Districts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div id="map" style="height: 800px;"></div>
+    <script>
+const map = L.map('map', {
+  minZoom: 7, // Set the minimum zoom level to 5
+  maxBounds: L.latLngBounds(
+    L.latLng(39.2868132,-80.5645942), // Southwest bound
+    L.latLng(43.667105, -70.2939151) // Northeast bound
+  )
+}).setView([39.9601662, -76.717791], 10);
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+//attribution
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://ytech.edu">York County School of Technology</a>, Trey Floto'
+}).addTo(map);
+
+//york tech popup
+var marker = L.marker([39.9302254, -76.6869776]).addTo(map)
+    .bindPopup('<a href="https://www.google.com/maps/dir/?api=1&destination=2179%20S%20Queen%20St,%20York,%20PA%2017402,%20USA" target="_blank">Directions</a> - York County School of Technology')
+    .openPopup();
+
+/*
+var popup = L.popup()
+    .setLatLng([39.9302254,-76.6869776])
+    .setContent("York County School of Technology")
+    .openOn(map);
+*/
+// Add the York County GeoJSON layer for York County
+let geojson1;
+try {
+  geojson1 = JSON.parse('<%- JSON.stringify(geojson1) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson1) {
+  L.geoJSON(geojson1, {
+    style: function(feature) {
+      return {
+        color: '#095540', // green outline
+        weight: 5 //LEAVE THIS AT 5 PIXELS, IT IS THE MAIN BORDER
+      };
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for York City School District
+let geojson2;
+try {
+  geojson2 = JSON.parse('<%- JSON.stringify(geojson2) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson2) {
+  L.geoJSON(geojson2, {
+    style: function(feature) {
+      return {
+        color: '#ef7a2d', // orange outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("York City School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for York Suburban school District
+let geojson3;
+try {
+  geojson3 = JSON.parse('<%- JSON.stringify(geojson3) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson3) {
+  L.geoJSON(geojson3, {
+    style: function(feature) {
+      return {
+        color: '#f26424', // orange outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("York Suburban School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for West York area school District
+let geojson4;
+try {
+  geojson4 = JSON.parse('<%- JSON.stringify(geojson4) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson4) {
+  L.geoJSON(geojson4, {
+    style: function(feature) {
+      return {
+        color: '#0A2360', // navy outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("West York School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Central York School District
+let geojson5;
+try {
+  geojson5 = JSON.parse('<%- JSON.stringify(geojson5) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson5) {
+  L.geoJSON(geojson5, {
+    style: function(feature) {
+      return {
+        color: '#e99034', // yellow outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("Central York School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Dallastown Area School District
+let geojson6;
+try {
+  geojson6 = JSON.parse('<%- JSON.stringify(geojson6) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson6) {
+  L.geoJSON(geojson6, {
+    style: function(feature) {
+      return {
+        color: '#072a79', // blue outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("Dallastown Area School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Spring Gove Area School District
+let geojson7;
+try {
+  geojson7 = JSON.parse('<%- JSON.stringify(geojson7) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson7) {
+  L.geoJSON(geojson7, {
+    style: function(feature) {
+      return {
+        color: '#003087', // blue outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("Spring Grove School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Red Lion Area School District
+let geojson8;
+try {
+  geojson8 = JSON.parse('<%- JSON.stringify(geojson8) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson8) {
+  L.geoJSON(geojson8, {
+    style: function(feature) {
+      return {
+        color: '#fecd30', // yellow outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("Red Lion Area School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Hanover Public School District
+let geojson9;
+try {
+  geojson9 = JSON.parse('<%- JSON.stringify(geojson9) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson9) {
+  L.geoJSON(geojson9, {
+    style: function(feature) {
+      return {
+        color: '#e67e22', // Orange outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("Hanover Public School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for South Western School District
+let geojson10;
+try {
+  geojson10 = JSON.parse('<%- JSON.stringify(geojson10) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson10) {
+  L.geoJSON(geojson10, {
+    style: function(feature) {
+      return {
+        color: '#FF0000', // Red outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("South Western School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Eastern York School District
+let geojson11;
+try {
+  geojson11 = JSON.parse('<%- JSON.stringify(geojson11) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson11) {
+  L.geoJSON(geojson11, {
+    style: function(feature) {
+      return {
+        color: '#1e427e', // Blue outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("Eastern School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for South Eastern School District
+let geojson12;
+try {
+  geojson12 = JSON.parse('<%- JSON.stringify(geojson12) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson12) {
+  L.geoJSON(geojson12, {
+    style: function(feature) {
+      return {
+        color: '#003F7F', // Blue outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("South Eastern School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Southern York School District
+let geojson13;
+try {
+  geojson13 = JSON.parse('<%- JSON.stringify(geojson13) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson13) {
+  L.geoJSON(geojson13, {
+    style: function(feature) {
+      return {
+        color: '#990000', // Red outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("Southern York School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Northeastern School District
+let geojson14;
+try {
+  geojson14 = JSON.parse('<%- JSON.stringify(geojson14) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson14) {
+  L.geoJSON(geojson14, {
+    style: function(feature) {
+      return {
+        color: '#ff9900', // orange outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("Northeastern School District");
+    }
+  }).addTo(map);
+}
+
+// Add the GeoJSON layer for Dover Area School District
+let geojson15;
+try {
+  geojson15 = JSON.parse('<%- JSON.stringify(geojson15) %>');
+} catch (error) {
+  console.error(error);
+}
+if (geojson15) {
+  L.geoJSON(geojson15, {
+    style: function(feature) {
+      return {
+        color: '#841016', // Maroon outline
+        weight: 3 // 3-pixel outline width
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("Dover Area School District");
+    }
+  }).addTo(map);
+}
+    </script>
+</body>
+</html>
+
