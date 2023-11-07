@@ -40,22 +40,8 @@ var popup = L.popup()
     .openOn(map);
 */
 // Add the York County GeoJSON layer for York County
+
 let geojson1;
-try {
-  geojson1 = JSON.parse('<%- JSON.stringify(geojson1) %>');
-} catch (error) {
-  console.error(error);
-}
-if (geojson1) {
-  L.geoJSON(geojson1, {
-    style: function(feature) {
-      return {
-        color: '#095540', // green outline
-        weight: 5 //LEAVE THIS AT 5 PIXELS, IT IS THE MAIN BORDER
-      };
-    }
-  }).addTo(map);
-}
 
 // Add the GeoJSON layer for York City School District
 let geojson2;

@@ -84,8 +84,8 @@ function fetchGeoJson(relationId) {
 app.get('/districts', async (req, res) => {
   try {
     // Fetch the GeoJSON data for multiple OSM relation IDs in parallel using Promise.all
-    const [geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7, geojson8, geojson9, geojson10, geojson11, geojson12, geojson13, geojson14, geojson15] = await Promise.all([
-      fetchGeoJson(417442), // York County
+    const [/*geojson1,*/ geojson2, geojson3, geojson4, geojson5, geojson6, geojson7, geojson8, geojson9, geojson10, geojson11, geojson12, geojson13, geojson14, geojson15] = await Promise.all([
+      //fetchGeoJson(417442), // York County
       fetchGeoJson(15798307), // York City School District
       fetchGeoJson(15798797), // York Suburban School District
       fetchGeoJson(15805026), // West York Area School District
@@ -103,7 +103,7 @@ app.get('/districts', async (req, res) => {
     ]);
 
     // Render the 'districtmap' view with the fetched GeoJSON data
-    res.render('districtmap', { geojson1, geojson2, geojson3, geojson4, geojson5, geojson6, geojson7, geojson8, geojson9, geojson10, geojson11, geojson12, geojson13, geojson14, geojson15 });
+    res.render('districtmap', { /*geojson1,*/ geojson2, geojson3, geojson4, geojson5, geojson6, geojson7, geojson8, geojson9, geojson10, geojson11, geojson12, geojson13, geojson14, geojson15 });
   } catch (err) {
     console.error(err);
     res.status(500).send('An error occurred');
